@@ -14,4 +14,4 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/app/**/*.ts', '<rootDir>/app/**/*.js'],
   testEnvironment: 'jsdom',
-}
+};

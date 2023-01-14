@@ -1,20 +1,15 @@
 {
-    "nuxt.isNuxtApp": false,
-    "editor.formatOnSave": true,
-    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "jest.jestCommandLine": "npm run jest",
-    "jest.autoRun": {
-      "watch": false
-    },
-    "jest.enableCodeLens": false,
-    "prettier.printWidth": 120,
-    "editor.tabSize": 2,
-    "files.exclude": {
-      "src/**/*.js": true
-    }
+  "nuxt.isNuxtApp": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "jest.jestCommandLine": "npm run jest",
+  "jest.autoRun": {
+    "watch": false
+  },
+  "jest.enableCodeLens": false,
+  "prettier.printWidth": 120,
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "src/**/*.js": true
   }
+}
