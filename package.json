@@ -5,6 +5,14 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "jest",
+    "start:01": "ts-node ./src/index.ts workTableAdd",
+    "start:02": "ts-node ./src/index.ts workTableUpdate",
+    "start:03": "ts-node ./src/index.ts workTableMultiUpdate",
+    "start:04": "ts-node ./src/index.ts workTableDelete",
+    "start:05": "ts-node ./src/index.ts workTableGet",
+    "start:06": "ts-node ./src/index.ts workTableQuery",
+    "start:07": "ts-node ./src/index.ts workTableScan",
+    "deploy": "sam deploy --stack-name DynamodbDemo -t template.yaml --no-fail-on-empty-changeset",
     "coverage": "nyc --reporter lcov npm run test"
   },
   "repository": {
@@ -42,6 +50,7 @@
     "typescript": "*"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.27.0"
+    "@aws-sdk/client-dynamodb": "^3.27.0",
+    "@aws-sdk/lib-dynamodb": "^3.245.0"
   }
 }
