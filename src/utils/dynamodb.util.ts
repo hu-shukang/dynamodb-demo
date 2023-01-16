@@ -17,6 +17,9 @@ const unmarshallOptions = {
 };
 
 const translateConfig = { marshallOptions, unmarshallOptions };
+/**
+ * DynamoDBを操作するには、「DocumentClient」を使用します
+ */
 const docClient = DynamoDBDocumentClient.from(dbClient, translateConfig);
 
 export { docClient };
