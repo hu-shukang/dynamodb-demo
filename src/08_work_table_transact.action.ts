@@ -4,7 +4,7 @@ import {
 } from '@aws-sdk/lib-dynamodb';
 import { docClient } from './utils/dynamodb.util';
 
-class WorkTableScanAction {
+class WorkTableTransactAction {
   public async action() {
     const input: TransactWriteCommandInput = {
       TransactItems: [
@@ -29,4 +29,4 @@ class WorkTableScanAction {
   }
 }
 
-export const workTableScanAction = new WorkTableScanAction();
+export const workTableTransactAction = new WorkTableTransactAction();
