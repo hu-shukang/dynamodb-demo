@@ -9,7 +9,7 @@ class WorkTableQueryAction {
    * @returns
    */
   public async action() {
-    const queryInput: QueryCommandInput = {
+    const input: QueryCommandInput = {
       TableName: 'DynamoDB-Demo-WorkTable',
       KeyConditionExpression: 'userId = :userId and begins_with(#date, :date)',
       ExpressionAttributeNames: {
@@ -20,8 +20,8 @@ class WorkTableQueryAction {
         ':date': '2023-01',
       },
     };
-    const queryResult = await docClient.send(new QueryCommand(queryInput));
-    return queryResult;
+    const result = await docClient.send(new QueryCommand(input));
+    return result;
   }
 }
 
