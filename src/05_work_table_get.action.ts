@@ -1,9 +1,9 @@
-import { GetCommand, DeleteCommandInput } from '@aws-sdk/lib-dynamodb';
+import { GetCommand, GetCommandInput } from '@aws-sdk/lib-dynamodb';
 import { docClient } from './utils/dynamodb.util';
 
 class WorkTableGetAction {
   public async action() {
-    const input: DeleteCommandInput = {
+    const input: GetCommandInput = {
       TableName: 'DynamoDB-Demo-WorkTable',
       Key: {
         userId: 'A001',
