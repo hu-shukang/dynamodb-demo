@@ -23,18 +23,18 @@ class TestDataAction {
 
     // insert data
     const dataList = [
-      { userId: 'A001', date: '2023-01-01', yearMonth: '2023-01', start: '09:00', end: '18:00', break: '30' },
-      { userId: 'A001', date: '2023-01-02', yearMonth: '2023-01', start: '09:00', end: '18:00', break: '30' },
-      { userId: 'A001', date: '2023-02-01', yearMonth: '2023-02', start: '09:00', end: '18:00', break: '60' },
-      { userId: 'A001', date: '2023-02-02', yearMonth: '2023-02', start: '09:00', end: '18:00', break: '60' },
-      { userId: 'A002', date: '2023-01-01', yearMonth: '2023-01', start: '09:00', end: '18:00', break: '60' },
-      { userId: 'A002', date: '2023-01-02', yearMonth: '2023-01', start: '09:00', end: '18:00', break: '60' },
-      { userId: 'A002', date: '2023-02-01', yearMonth: '2023-02', start: '09:00', end: '18:00', break: '60' },
-      { userId: 'A002', date: '2023-02-02', yearMonth: '2023-02', start: '09:00', end: '18:00', break: '60' },
-      { userId: 'A003', date: '2023-01-01', yearMonth: '2023-01', start: '09:00', end: '18:00', break: '60' },
-      { userId: 'A003', date: '2023-01-02', yearMonth: '2023-01', start: '09:00', end: '18:00', break: '60' },
-      { userId: 'A003', date: '2023-02-01', yearMonth: '2023-02', start: '09:00', end: '18:00', break: '60' },
-      { userId: 'A003', date: '2023-02-02', yearMonth: '2023-02', start: '09:00', end: '18:00', break: '60' },
+      { userId: 'A001', date: '2023-01-01', yearMonth: '2023-01', start: '09:00', end: '18:00', break: 30 },
+      { userId: 'A001', date: '2023-01-02', yearMonth: '2023-01', start: '09:00', end: '18:00', break: 30 },
+      { userId: 'A001', date: '2023-02-01', yearMonth: '2023-02', start: '09:00', end: '18:00', break: 60 },
+      { userId: 'A001', date: '2023-02-02', yearMonth: '2023-02', start: '09:00', end: '18:00', break: 60 },
+      { userId: 'A002', date: '2023-01-01', yearMonth: '2023-01', start: '09:00', end: '18:00', break: 60 },
+      { userId: 'A002', date: '2023-01-02', yearMonth: '2023-01', start: '09:00', end: '18:00', break: 60 },
+      { userId: 'A002', date: '2023-02-01', yearMonth: '2023-02', start: '09:00', end: '18:00', break: 60 },
+      { userId: 'A002', date: '2023-02-02', yearMonth: '2023-02', start: '09:00', end: '18:00', break: 60 },
+      { userId: 'A003', date: '2023-01-01', yearMonth: '2023-01', start: '09:00', end: '18:00', break: 60 },
+      { userId: 'A003', date: '2023-01-02', yearMonth: '2023-01', start: '09:00', end: '18:00', break: 60 },
+      { userId: 'A003', date: '2023-02-01', yearMonth: '2023-02', start: '09:00', end: '18:00', break: 60 },
+      { userId: 'A003', date: '2023-02-02', yearMonth: '2023-02', start: '09:00', end: '18:00', break: 60 },
     ];
     for (const data of dataList) {
       const input: PutCommandInput = {

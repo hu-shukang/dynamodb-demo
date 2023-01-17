@@ -7,6 +7,11 @@ import { workTableQueryAction } from './06_work_table_query.action';
 import { workTableScanAction } from './07_work_table_scan.action';
 import { workTableTransactAction } from './08_work_table_transact.action';
 import { workTableIndexAction } from './09_work_table_index.action';
+import { rensyuTableDataAction } from './10_rensyu_table_data.action';
+import { rensyuTableQueryDepAction } from './11_rensyu_table_query_dep.action';
+import { rensyuTableGetEmpAction } from './12_rensyu_table_get_emp.action';
+import { rensyuTableQueryDepEmpAction } from './13_rensyu_table_query_dep_emp.action';
+import { rensyuTableQueryWorkAction } from './14_rensyu_table_query_work.action';
 import { testDataAction } from './99_test_data.action';
 
 const actionMap = {
@@ -19,13 +24,16 @@ const actionMap = {
   '07': workTableScanAction,
   '08': workTableTransactAction,
   '09': workTableIndexAction,
+  '10': rensyuTableDataAction,
+  '11': rensyuTableQueryDepAction,
+  '12': rensyuTableGetEmpAction,
+  '13': rensyuTableQueryDepEmpAction,
+  '14': rensyuTableQueryWorkAction,
   '99': testDataAction,
 };
 
-type ActionName = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09';
-
 const main = async () => {
-  const actionName = process.argv[2] as ActionName;
+  const actionName = process.argv[2];
   const result = await actionMap[actionName].action();
   console.log(result);
 };

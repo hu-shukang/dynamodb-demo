@@ -17,7 +17,7 @@ Resources:
         - AttributeName: yearMonth
           AttributeType: S
         - AttributeName: break
-          AttributeType: S
+          AttributeType: N
       KeySchema:
         - AttributeName: userId
           KeyType: HASH
@@ -30,6 +30,32 @@ Resources:
             - AttributeName: yearMonth
               KeyType: HASH
             - AttributeName: break
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+  RensyuTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: DynamoDB-Demo-RensyuTable
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+        - AttributeName: sk
+          AttributeType: S
+        - AttributeName: departmentId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+        - AttributeName: sk
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+      GlobalSecondaryIndexes:
+        - IndexName: DepartmentIndex
+          KeySchema:
+            - AttributeName: departmentId
+              KeyType: HASH
+            - AttributeName: pk
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
