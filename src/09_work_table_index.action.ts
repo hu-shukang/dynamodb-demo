@@ -5,13 +5,11 @@ class WorkTableIndexAction {
   public async action() {
     const input: QueryCommandInput = {
       TableName: 'DynamoDB-Demo-WorkTable',
-      IndexName: 'StartTimeIndex',
-      KeyConditionExpression: 'begins_with(#date, :date)',
-      ExpressionAttributeNames: {
-        '#date': 'date',
-      },
+      IndexName: 'BreakIndex',
+      KeyConditionExpression: 'yearMonth = :yearMonth and break = :break',
       ExpressionAttributeValues: {
-        ':date': '2023-01',
+        ':yearMonth': '2023-01',
+        ':break': 60,
       },
     };
     const result = await docClient.send(new QueryCommand(input));

@@ -16,7 +16,7 @@ Resources:
           AttributeType: S
         - AttributeName: yearMonth
           AttributeType: S
-        - AttributeName: startTime
+        - AttributeName: break
           AttributeType: S
       KeySchema:
         - AttributeName: userId
@@ -25,11 +25,11 @@ Resources:
           KeyType: RANGE
       BillingMode: PAY_PER_REQUEST
       GlobalSecondaryIndexes:
-        - IndexName: StartTimeIndex
+        - IndexName: BreakIndex
           KeySchema:
             - AttributeName: yearMonth
               KeyType: HASH
-            - AttributeName: startTime
+            - AttributeName: break
               KeyType: RANGE
           Projection:
             ProjectionType: ALL
