@@ -1,24 +1,28 @@
 import { DynamoDB } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 
+// リージョンを設定する
+// リージョン: それぞれ地理的に離れた領域のこと
+// 東京リージョンは「ap-northeast-1」
 const dbClient = new DynamoDB({ region: 'ap-northeast-1' });
+
 const marshallOptions = {
-  // Whether to automatically convert empty strings, blobs, and sets to `null`.
-  convertEmptyValues: false, // false, by default.
-  // Whether to remove undefined values while marshalling.
-  removeUndefinedValues: false, // false, by default.
-  // Whether to convert typeof object to map attribute.
-  convertClassInstanceToMap: false, // false, by default.
+  // 空の文字列、バイナリ、およびセットを自動的に「null」に変換するか
+  convertEmptyValues: false, // デフォルト値：false
+  // 挿入時に未定義の値を削除するか
+  removeUndefinedValues: false, // デフォルト値：false
+  // オブジェクトを map 型に変換するか
+  convertClassInstanceToMap: false, // デフォルト値：false
 };
 
 const unmarshallOptions = {
-  // Whether to return numbers as a string instead of converting them to native JavaScript numbers.
-  wrapNumbers: false, // false, by default.
+  // 数値をJavaScriptのNumber型に変換するのではなく、文字列として返すか
+  wrapNumbers: false, // デフォルト値：false
 };
 
 const translateConfig = { marshallOptions, unmarshallOptions };
 /**
- * DynamoDBを操作するには、「DocumentClient」を使用します
+ * DynamoDBの「CRUD」操作するには、「DocumentClient」を使用します
  */
 const docClient = DynamoDBDocumentClient.from(dbClient, translateConfig);
 
